@@ -15,6 +15,17 @@
 		CC316C6D2D562D190034F3C8 /* ToDoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC316C6C2D562D190034F3C8 /* ToDoListTests.swift */; };
 		CC316C772D562D190034F3C8 /* ToDoListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC316C762D562D190034F3C8 /* ToDoListUITests.swift */; };
 		CC316C792D562D190034F3C8 /* ToDoListUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC316C782D562D190034F3C8 /* ToDoListUITestsLaunchTests.swift */; };
+		CC316CB12D57C0B30034F3C8 /* TaskListModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC316CA62D57C0B30034F3C8 /* TaskListModuleInput.swift */; };
+		CC316CB22D57C0B30034F3C8 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC316CA72D57C0B30034F3C8 /* TaskListViewController.swift */; };
+		CC316CB32D57C0B30034F3C8 /* TaskListInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC316CA82D57C0B30034F3C8 /* TaskListInteractorOutput.swift */; };
+		CC316CB42D57C0B30034F3C8 /* TaskListModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC316CA92D57C0B30034F3C8 /* TaskListModuleConfigurator.swift */; };
+		CC316CB52D57C0B30034F3C8 /* TaskListRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC316CAA2D57C0B30034F3C8 /* TaskListRouterInput.swift */; };
+		CC316CB62D57C0B30034F3C8 /* TaskListViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC316CAB2D57C0B30034F3C8 /* TaskListViewOutput.swift */; };
+		CC316CB72D57C0B30034F3C8 /* TaskListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC316CAC2D57C0B30034F3C8 /* TaskListPresenter.swift */; };
+		CC316CB82D57C0B30034F3C8 /* TaskListViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC316CAD2D57C0B30034F3C8 /* TaskListViewInput.swift */; };
+		CC316CB92D57C0B30034F3C8 /* TaskListInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC316CAE2D57C0B30034F3C8 /* TaskListInteractorInput.swift */; };
+		CC316CBA2D57C0B30034F3C8 /* TaskListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC316CAF2D57C0B30034F3C8 /* TaskListRouter.swift */; };
+		CC316CBB2D57C0B30034F3C8 /* TaskListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC316CB02D57C0B30034F3C8 /* TaskListInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +58,17 @@
 		CC316C722D562D190034F3C8 /* ToDoListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC316C762D562D190034F3C8 /* ToDoListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListUITests.swift; sourceTree = "<group>"; };
 		CC316C782D562D190034F3C8 /* ToDoListUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CC316CA62D57C0B30034F3C8 /* TaskListModuleInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListModuleInput.swift; sourceTree = "<group>"; };
+		CC316CA72D57C0B30034F3C8 /* TaskListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
+		CC316CA82D57C0B30034F3C8 /* TaskListInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListInteractorOutput.swift; sourceTree = "<group>"; };
+		CC316CA92D57C0B30034F3C8 /* TaskListModuleConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListModuleConfigurator.swift; sourceTree = "<group>"; };
+		CC316CAA2D57C0B30034F3C8 /* TaskListRouterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListRouterInput.swift; sourceTree = "<group>"; };
+		CC316CAB2D57C0B30034F3C8 /* TaskListViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListViewOutput.swift; sourceTree = "<group>"; };
+		CC316CAC2D57C0B30034F3C8 /* TaskListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListPresenter.swift; sourceTree = "<group>"; };
+		CC316CAD2D57C0B30034F3C8 /* TaskListViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListViewInput.swift; sourceTree = "<group>"; };
+		CC316CAE2D57C0B30034F3C8 /* TaskListInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListInteractorInput.swift; sourceTree = "<group>"; };
+		CC316CAF2D57C0B30034F3C8 /* TaskListRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListRouter.swift; sourceTree = "<group>"; };
+		CC316CB02D57C0B30034F3C8 /* TaskListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,8 +150,27 @@
 		CC316C852D57AEE60034F3C8 /* UserStories */ = {
 			isa = PBXGroup;
 			children = (
+				CC316CA52D57C0560034F3C8 /* TaskList */,
 			);
 			path = UserStories;
+			sourceTree = "<group>";
+		};
+		CC316CA52D57C0560034F3C8 /* TaskList */ = {
+			isa = PBXGroup;
+			children = (
+				CC316CB02D57C0B30034F3C8 /* TaskListInteractor.swift */,
+				CC316CAE2D57C0B30034F3C8 /* TaskListInteractorInput.swift */,
+				CC316CA82D57C0B30034F3C8 /* TaskListInteractorOutput.swift */,
+				CC316CA92D57C0B30034F3C8 /* TaskListModuleConfigurator.swift */,
+				CC316CA62D57C0B30034F3C8 /* TaskListModuleInput.swift */,
+				CC316CAC2D57C0B30034F3C8 /* TaskListPresenter.swift */,
+				CC316CAF2D57C0B30034F3C8 /* TaskListRouter.swift */,
+				CC316CAA2D57C0B30034F3C8 /* TaskListRouterInput.swift */,
+				CC316CA72D57C0B30034F3C8 /* TaskListViewController.swift */,
+				CC316CAD2D57C0B30034F3C8 /* TaskListViewInput.swift */,
+				CC316CAB2D57C0B30034F3C8 /* TaskListViewOutput.swift */,
+			);
+			path = TaskList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,9 +303,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC316CB32D57C0B30034F3C8 /* TaskListInteractorOutput.swift in Sources */,
+				CC316CB82D57C0B30034F3C8 /* TaskListViewInput.swift in Sources */,
+				CC316CB72D57C0B30034F3C8 /* TaskListPresenter.swift in Sources */,
+				CC316CB62D57C0B30034F3C8 /* TaskListViewOutput.swift in Sources */,
 				CC316C5A2D562D160034F3C8 /* ViewController.swift in Sources */,
+				CC316CBA2D57C0B30034F3C8 /* TaskListRouter.swift in Sources */,
+				CC316CB12D57C0B30034F3C8 /* TaskListModuleInput.swift in Sources */,
+				CC316CB92D57C0B30034F3C8 /* TaskListInteractorInput.swift in Sources */,
 				CC316C562D562D160034F3C8 /* AppDelegate.swift in Sources */,
+				CC316CB52D57C0B30034F3C8 /* TaskListRouterInput.swift in Sources */,
 				CC316C582D562D160034F3C8 /* SceneDelegate.swift in Sources */,
+				CC316CB42D57C0B30034F3C8 /* TaskListModuleConfigurator.swift in Sources */,
+				CC316CB22D57C0B30034F3C8 /* TaskListViewController.swift in Sources */,
+				CC316CBB2D57C0B30034F3C8 /* TaskListInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

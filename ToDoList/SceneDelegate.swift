@@ -18,8 +18,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.windowScene = windowScene
         window?.makeKeyAndVisible()
-        window?.rootViewController = ViewController()
         
+        let configurator = TaskListModuleConfigurator()
+        let taskListViewController = TaskListViewController()
+        configurator.configureModuleForViewInput(viewInput: taskListViewController)
+        
+        window?.rootViewController = taskListViewController
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
