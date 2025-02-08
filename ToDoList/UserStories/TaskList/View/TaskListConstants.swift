@@ -10,7 +10,7 @@ import UIKit
 
 struct TaskListConstants {
     
-    static let headerTitle = "Заголовок"
+    static let headerTitle = "Задачи"
     static let headerFont = UIFont.boldSystemFont(ofSize: 34)
     
     static let backgroundColor: UIColor = UIColor(red: 4, green: 4, blue: 4, alpha: 1)
