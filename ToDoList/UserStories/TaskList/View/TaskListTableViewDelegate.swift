@@ -12,28 +12,7 @@ class TaskListTableViewDelegate: NSObject, UITableViewDelegate, UITableViewDataS
     
     private let minHeaderHeight: CGFloat = 80
     private let maxHeaderHeight: CGFloat = 188
-    
-//    private var titleLabel: UILabel?
-//
-//    private var headerHeightConstraint: NSLayoutConstraint?
-//    private var titleBottomConstraint: NSLayoutConstraint?
-    
-//    private var view: UIView?
-    
-//    init(titleLabel: UILabel, view: UIView) {
-//        super.init()
-//
-//        self.titleLabel = titleLabel
-//        self.view = view
-//    }
-    
-//    func setupConstraints(
-//        headerHeightConstraint: NSLayoutConstraint,
-//        titleBottomConstraint: NSLayoutConstraint) {
-//        self.headerHeightConstraint = headerHeightConstraint
-//        self.titleBottomConstraint = titleBottomConstraint
-//    }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 30
     }

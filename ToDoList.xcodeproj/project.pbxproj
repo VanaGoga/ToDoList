@@ -27,6 +27,8 @@
 		CC316CBA2D57C0B30034F3C8 /* TaskListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC316CAF2D57C0B30034F3C8 /* TaskListRouter.swift */; };
 		CC316CBB2D57C0B30034F3C8 /* TaskListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC316CB02D57C0B30034F3C8 /* TaskListInteractor.swift */; };
 		CC316CBE2D57C17A0034F3C8 /* TaskListTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC316CBD2D57C17A0034F3C8 /* TaskListTableViewDelegate.swift */; };
+		CC316CC02D57E81E0034F3C8 /* TaskListConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC316CBF2D57E81E0034F3C8 /* TaskListConstants.swift */; };
+		CC316CC22D57EA2C0034F3C8 /* TaskListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC316CC12D57EA2C0034F3C8 /* TaskListHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		CC316CAF2D57C0B30034F3C8 /* TaskListRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListRouter.swift; sourceTree = "<group>"; };
 		CC316CB02D57C0B30034F3C8 /* TaskListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListInteractor.swift; sourceTree = "<group>"; };
 		CC316CBD2D57C17A0034F3C8 /* TaskListTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListTableViewDelegate.swift; sourceTree = "<group>"; };
+		CC316CBF2D57E81E0034F3C8 /* TaskListConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListConstants.swift; sourceTree = "<group>"; };
+		CC316CC12D57EA2C0034F3C8 /* TaskListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +184,8 @@
 				CC316CA72D57C0B30034F3C8 /* TaskListViewController.swift */,
 				CC316CAD2D57C0B30034F3C8 /* TaskListViewInput.swift */,
 				CC316CBD2D57C17A0034F3C8 /* TaskListTableViewDelegate.swift */,
+				CC316CBF2D57E81E0034F3C8 /* TaskListConstants.swift */,
+				CC316CC12D57EA2C0034F3C8 /* TaskListHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -318,6 +324,7 @@
 				CC316CB82D57C0B30034F3C8 /* TaskListViewInput.swift in Sources */,
 				CC316CB72D57C0B30034F3C8 /* TaskListPresenter.swift in Sources */,
 				CC316CB62D57C0B30034F3C8 /* TaskListViewOutput.swift in Sources */,
+				CC316CC22D57EA2C0034F3C8 /* TaskListHeaderView.swift in Sources */,
 				CC316C5A2D562D160034F3C8 /* ViewController.swift in Sources */,
 				CC316CBA2D57C0B30034F3C8 /* TaskListRouter.swift in Sources */,
 				CC316CB12D57C0B30034F3C8 /* TaskListModuleInput.swift in Sources */,
@@ -328,6 +335,7 @@
 				CC316C582D562D160034F3C8 /* SceneDelegate.swift in Sources */,
 				CC316CB42D57C0B30034F3C8 /* TaskListModuleConfigurator.swift in Sources */,
 				CC316CB22D57C0B30034F3C8 /* TaskListViewController.swift in Sources */,
+				CC316CC02D57E81E0034F3C8 /* TaskListConstants.swift in Sources */,
 				CC316CBB2D57C0B30034F3C8 /* TaskListInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

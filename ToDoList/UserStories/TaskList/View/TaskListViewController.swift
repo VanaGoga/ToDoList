@@ -10,7 +10,7 @@ import UIKit
 class TaskListViewController: UIViewController, TaskListViewInput {
     
     var output: TaskListViewOutput!
-    //    var
+
     private let tableView = UITableView()
     private var headerView: UIView!
     private var titleLabel: UILabel!
@@ -26,12 +26,10 @@ class TaskListViewController: UIViewController, TaskListViewInput {
     override func viewDidLoad() {
         super.viewDidLoad()
         output.viewIsReady()
-        view.backgroundColor = .black
+        view.backgroundColor = TaskListConstants.backgroundColor
         
         setupTableView()
         setupTableHeaderView()
-        
-//        delegate?.setupConstraints(headerHeightConstraint: headerHeightConstraint, titleBottomConstraint: titleBottomConstraint)
     }
     
     private func setupTableView() {
@@ -41,6 +39,7 @@ class TaskListViewController: UIViewController, TaskListViewInput {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.backgroundColor = .black
         
         view.addSubview(tableView)
         
@@ -56,19 +55,19 @@ class TaskListViewController: UIViewController, TaskListViewInput {
     
     private func setupTableHeaderView() {
         headerView = UIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: maxHeaderHeight))
-        headerView.backgroundColor = .systemBlue
         
         titleLabel = UILabel()
-        titleLabel.text = "Заголовок"
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 32)
+        titleLabel.text = TaskListConstants.headerTitle
+        titleLabel.font = TaskListConstants.headerFont
         titleLabel.textColor = .white
-        titleLabel.textAlignment = .center
+        titleLabel.textAlignment = .left
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
         headerView.addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
-            titleLabel.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
+            titleLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 20),
+            titleLabel.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -20),
             titleLabel.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -20)
         ])
         
