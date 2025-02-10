@@ -12,14 +12,25 @@ class TaskListTableViewDelegate: NSObject, UITableViewDelegate, UITableViewDataS
     
     private let minHeaderHeight: CGFloat = 80
     private let maxHeaderHeight: CGFloat = 188
+    
+    private var tasks: [Task] = [
+        Task(title: "Купить продукты", details: "Купить хлеб, молоко, яйца", date: Date(), isCompleted: false),
+        Task(title: "Сделать зарядку", details: "15 минут кардио + растяжка", date: Date(), isCompleted: true),
+        Task(title: "Подготовить отчет", details: "Финальный отчет по проекту", date: Date(), isCompleted: false)
+    ]
 
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { return tasks.count }
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell { guard let cell =tableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath) as? TaskCell else { return UITableViewCell() } cell.configure(with: tasks[indexPath.row]) return cell }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 30
+        return tasks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "Row\(indexPath.row)"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TaskListTableViewCell", for: indexPath) as? TaskListTableViewCell
+        else { return UITableViewCell() }
+        
+        cell.configure(with: tasks[indexPath.row])
         
         return cell
     }

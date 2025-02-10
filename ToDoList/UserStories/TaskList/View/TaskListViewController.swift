@@ -40,7 +40,8 @@ class TaskListViewController: UIViewController, TaskListViewInput {
         delegate = TaskListTableViewDelegate()
         tableView.delegate = delegate
         tableView.dataSource = delegate
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+//        TaskCell
+        tableView.register(TaskListTableViewCell.self, forCellReuseIdentifier: "TaskListTableViewCell")
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .black
