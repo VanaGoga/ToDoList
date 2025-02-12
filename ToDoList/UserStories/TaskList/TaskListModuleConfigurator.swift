@@ -26,6 +26,7 @@ class TaskListModuleConfigurator {
 
         let interactor = TaskListInteractor()
         interactor.output = presenter
+        interactor.service = TodoListService()
 
         presenter.interactor = interactor
         viewController.output = presenter

@@ -5,6 +5,8 @@
 //  Created by Савва on 07.02.2025.
 //
 
+import Foundation
+
 class TaskListPresenter: TaskListModuleInput, TaskListViewOutput {
 
     weak var view: TaskListViewInput!
@@ -12,8 +14,6 @@ class TaskListPresenter: TaskListModuleInput, TaskListViewOutput {
     var router: TaskListRouterInput!
 
     func viewIsReady() {
-//        view.setupInitialState(with: filter.name)
-        
         interactor.getTaskList()
     }
     
@@ -25,7 +25,14 @@ class TaskListPresenter: TaskListModuleInput, TaskListViewOutput {
 extension TaskListPresenter: TaskListInteractorOutput {
     
     func didLoad(tasks: [Task]) {
-        view.show(tasks: tasks)
+        if !Thread.isMainThread {
+            DispatchQueue.main.async { [weak self] in
+                self?.view.show(tasks: tasks)
+            }
+        } else {
+            view.show(tasks: tasks)
+        }
+        
     }
     
 }

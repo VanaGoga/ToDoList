@@ -30,8 +30,8 @@
             filePath = "ToDoList/UserStories/TaskList/Interactor/TaskListInteractor.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "getTaskList()"
             landmarkType = "7">
          </BreakpointContent>
@@ -50,6 +50,102 @@
             endingLineNumber = "41"
             landmarkName = "show(tasks:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "12177A21-CCB0-42B2-8FA2-3F5077C05805"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDoList/UserStories/TaskList/Interactor/TaskListInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "getTaskList()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "12177A21-CCB0-42B2-8FA2-3F5077C05805 - 9e2da27354ae1318"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ToDoList.TaskListInteractor.getTaskList() -&gt; ()"
+                  moduleName = "ToDoList"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/savva/ToDoList/ToDoList/UserStories/TaskList/Interactor/TaskListInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "404">
+               </Location>
+               <Location
+                  uuid = "12177A21-CCB0-42B2-8FA2-3F5077C05805 - b861d2470188ed1b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (ToDoList.ServiceResponse&lt;Swift.Array&lt;ToDoList.Task&gt;&gt;) -&gt; () in ToDoList.TaskListInteractor.getTaskList() -&gt; ()"
+                  moduleName = "ToDoList"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/savva/ToDoList/ToDoList/UserStories/TaskList/Interactor/TaskListInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "100">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F5BE6B5B-C058-4C3D-BEAA-0D80968E2843"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDoList/UserStories/TaskList/Interactor/TaskListInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "TaskListInteractor"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "F5BE6B5B-C058-4C3D-BEAA-0D80968E2843 - 9e2da27354ae1387"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ToDoList.TaskListInteractor.getTaskList() -&gt; ()"
+                  moduleName = "ToDoList"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/savva/ToDoList/ToDoList/UserStories/TaskList/Interactor/TaskListInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "F5BE6B5B-C058-4C3D-BEAA-0D80968E2843 - 9e2da27354ae1387"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ToDoList.TaskListInteractor.getTaskList() -&gt; ()"
+                  moduleName = "ToDoList"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/savva/ToDoList/ToDoList/UserStories/TaskList/Interactor/TaskListInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "108">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
