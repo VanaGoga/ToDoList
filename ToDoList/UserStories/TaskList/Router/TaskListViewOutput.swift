@@ -7,10 +7,6 @@
 
 protocol TaskListViewOutput {
 
-    /**
-        @author Savva
-        Notify presenter that view is ready
-    */
-
+    /// Notify presenter that view is ready
     func viewIsReady()
 }
