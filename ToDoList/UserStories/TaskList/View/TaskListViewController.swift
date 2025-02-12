@@ -38,7 +38,7 @@ class TaskListViewController: UIViewController {
 
     private func setupTableView() {
         tableViewHandler = TaskListTableViewHandler()
-        tableViewHandler?.setupInitialState(with: tableView)
+        tableViewHandler?.setupInitialState(with: tableView, output: self)
 
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .black
@@ -76,5 +76,47 @@ extension TaskListViewController: TaskListViewInput {
         
         tableView.reloadData()
     }
+    
+}
+
+
+// MARK: TaskListTableViewHandlerOutput
+
+extension TaskListViewController: TaskListTableViewHandlerOutput {
+    
+    func showActions(for index: IndexPath) {
+        let alertController = UIAlertController(title: "Действия", message: "Выберите действие для задачи task", preferredStyle: .actionSheet)
+        
+        alertController.addAction(UIAlertAction(title: "Редактировать", style: .default, handler: { _ in
+            self.editTask(at: index)
+        }))
+        
+        alertController.addAction(UIAlertAction(title: "Поделиться", style: .default, handler: { _ in
+//            self.shareTask(task)
+        }))
+        
+        alertController.addAction(UIAlertAction(title: "Удалить", style: .destructive, handler: { _ in
+            self.deleteTask(at: index)
+        }))
+        
+        alertController.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    private func editTask(at indexPath: IndexPath) {
+//           print("Редактирование задачи: \(tasks[indexPath.row])")
+    }
+    
+    private func shareTask(_ task: String) {
+        print("Поделиться задачей: \(task)")
+    }
+    
+    private func deleteTask(at indexPath: IndexPath) {
+//           tasks.remove(at: indexPath.row)
+//           tableView.deleteRows(at: [indexPath], with: .fade)
+        print("Удалено!")
+    }
+    
     
 }

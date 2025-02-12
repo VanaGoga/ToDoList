@@ -9,6 +9,8 @@ import UIKit
 
 class TaskListTableViewCell: UITableViewCell {
     
+    var onLongPress: (() -> Void)?
+    
     private let statusImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
@@ -44,6 +46,8 @@ class TaskListTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        setupLongPressGesture()
         
         backgroundColor = .black
         
@@ -90,4 +94,13 @@ class TaskListTableViewCell: UITableViewCell {
         
         dateLabel.text = dateFormatter.string(from: task.date)
     }
+    
+    private func setupLongPressGesture() {
+            let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
+            self.addGestureRecognizer(longPressGesture)
+        }
+        
+        @objc private func handleLongPress() {
+            onLongPress?()
+        }
 }

@@ -8,16 +8,25 @@
 import Foundation
 import UIKit
 
+
+protocol TaskListTableViewHandlerOutput: AnyObject {
+    
+    func showActions(for index: IndexPath)
+    
+}
+
 class TaskListTableViewHandler: NSObject, UITableViewDelegate {
     
     private let minHeaderHeight: CGFloat = 80
     private let maxHeaderHeight: CGFloat = 188
-    weak var tableView: UITableView!
+    weak var tableView: UITableView?
+    weak var output: TaskListTableViewHandlerOutput?
     
     private var tasks: [Task] = []
 
-    func setupInitialState(with tableView: UITableView) {
+    func setupInitialState(with tableView: UITableView, output: TaskListTableViewHandlerOutput?) {
         self.tableView = tableView
+        self.output = output
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -68,8 +77,11 @@ extension TaskListTableViewHandler: UITableViewDataSource {
         else { return UITableViewCell() }
         
         cell.configure(with: tasks[indexPath.row])
+        cell.onLongPress = { [weak self] in
+            self?.output?.showActions(for: indexPath)
+        }
         
         return cell
     }
-    
+
 }
