@@ -32,7 +32,6 @@ extension TaskListPresenter: TaskListInteractorOutput {
         } else {
             view.show(tasks: tasks)
         }
-        
     }
     
 }

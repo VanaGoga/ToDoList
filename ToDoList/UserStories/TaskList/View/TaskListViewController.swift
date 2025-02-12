@@ -7,14 +7,14 @@
 
 import UIKit
 
-class TaskListViewController: UIViewController, TaskListViewInput {
+class TaskListViewController: UIViewController {
     
     var output: TaskListViewOutput!
 
     private let tableView = UITableView()
     private var headerView: UIView!
     private var titleLabel: UILabel!
-    private var delegate: TaskListTableViewDelegate?
+    private var tableViewHandler: TaskListTableViewHandler?
 
     private let maxHeaderHeight: CGFloat = 200
     private let minHeaderHeight: CGFloat = 80
@@ -26,7 +26,6 @@ class TaskListViewController: UIViewController, TaskListViewInput {
         return .lightContent
     }
     
-    // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = TaskListConstants.backgroundColor
@@ -36,16 +35,10 @@ class TaskListViewController: UIViewController, TaskListViewInput {
         
         output.viewIsReady()
     }
-    
-    func show(tasks: [Task]) {
-        delegate?.show(tasks: tasks)
-        
-        tableView.reloadData()
-    }
-    
+
     private func setupTableView() {
-        delegate = TaskListTableViewDelegate()
-        delegate?.setupInitialState(with: tableView)
+        tableViewHandler = TaskListTableViewHandler()
+        tableViewHandler?.setupInitialState(with: tableView)
 
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .black
@@ -69,7 +62,19 @@ class TaskListViewController: UIViewController, TaskListViewInput {
         tableView.tableHeaderView = headerView
     }
 
-    // MARK: TaskListViewInput
+}
+
+// MARK: TaskListViewInput
+
+extension TaskListViewController: TaskListViewInput {
+    
     func setupInitialState() {
     }
+    
+    func show(tasks: [Task]) {
+        tableViewHandler?.show(tasks: tasks)
+        
+        tableView.reloadData()
+    }
+    
 }

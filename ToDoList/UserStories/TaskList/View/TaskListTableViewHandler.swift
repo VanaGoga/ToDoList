@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class TaskListTableViewDelegate: NSObject, UITableViewDelegate {
+class TaskListTableViewHandler: NSObject, UITableViewDelegate {
     
     private let minHeaderHeight: CGFloat = 80
     private let maxHeaderHeight: CGFloat = 188
@@ -57,7 +57,7 @@ class TaskListTableViewDelegate: NSObject, UITableViewDelegate {
 
 // MARK: UITableViewDataSource
 
-extension TaskListTableViewDelegate: UITableViewDataSource {
+extension TaskListTableViewHandler: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tasks.count

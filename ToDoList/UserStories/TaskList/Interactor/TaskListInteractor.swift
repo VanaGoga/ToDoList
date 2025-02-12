@@ -37,18 +37,12 @@ class TaskListInteractor: TaskListInteractorInput {
                 switch response {
                 case let .success(result):
                     self.output.didLoad(tasks: result)
-                case let .error(errors): break
+                    
+                    self.saveTasksToCoreData(result)
+                case let .error(_): break
                 }
             }
         }
-        
-//        let tasks = [
-//            Task(title: "Купить продукты", details: "Купить хлеб, молоко, яйца", date: Date(), isCompleted: false),
-//            Task(title: "Сделать зарядку", details: "15 минут кардио + растяжка", date: Date(), isCompleted: true),
-//            Task(title: "Подготовить отчет", details: "Финальный отчет по проекту", date: Date(), isCompleted: false)
-//        ]
-//        
-//        return output.didLoad(tasks: tasks)
     }
     
     func fetchTasksFromCoreData() -> [Task]? {

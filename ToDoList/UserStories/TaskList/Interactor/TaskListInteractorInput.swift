@@ -8,7 +8,8 @@
 import Foundation
 
 protocol TaskListInteractorInput {
-
+    
+    /// Get list of tasks
     func getTaskList() 
     
 }

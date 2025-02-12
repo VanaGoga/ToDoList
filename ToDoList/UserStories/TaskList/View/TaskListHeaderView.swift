@@ -52,22 +52,17 @@ class TaskListHeaderView: UIView {
         searchIcon.translatesAutoresizingMaskIntoConstraints = false
         searchContainer.addSubview(searchIcon)
         
-        // Поле ввода
         searchTextField = UITextField()
-//        searchTextField.placeholder = "Поиск"
-        
         searchTextField.attributedPlaceholder = NSAttributedString(
                 string: "Поиск",
                 attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
             )
         
-//        searchTextField.tintColor = .lightGray
         searchTextField.textColor = .lightGray
         searchTextField.font = UIFont.systemFont(ofSize: 16)
         searchTextField.translatesAutoresizingMaskIntoConstraints = false
         searchContainer.addSubview(searchTextField)
         
-        // Кнопка микрофона
         microphoneButton = UIButton(type: .system)
         microphoneButton.setImage(UIImage(systemName: "mic.fill"), for: .normal)
         microphoneButton.tintColor = .lightGray
@@ -79,7 +74,6 @@ class TaskListHeaderView: UIView {
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
             titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
-//            titleLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -20),
             
             searchContainer.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
             searchContainer.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
