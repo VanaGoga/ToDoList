@@ -171,12 +171,9 @@
 			children = (
 				CC53E9312D5A88520080D4BD /* Entities */,
 				CC316CBC2D57C1310034F3C8 /* View */,
-				CC316CB02D57C0B30034F3C8 /* TaskListInteractor.swift */,
-				CC316CAE2D57C0B30034F3C8 /* TaskListInteractorInput.swift */,
-				CC316CA82D57C0B30034F3C8 /* TaskListInteractorOutput.swift */,
+				CC7797162D5D19F700299F54 /* Presenter */,
 				CC316CA92D57C0B30034F3C8 /* TaskListModuleConfigurator.swift */,
-				CC316CA62D57C0B30034F3C8 /* TaskListModuleInput.swift */,
-				CC316CAC2D57C0B30034F3C8 /* TaskListPresenter.swift */,
+				CC7797172D5D1A7900299F54 /* Interactor */,
 				CC316CAF2D57C0B30034F3C8 /* TaskListRouter.swift */,
 				CC316CAA2D57C0B30034F3C8 /* TaskListRouterInput.swift */,
 				CC316CAB2D57C0B30034F3C8 /* TaskListViewOutput.swift */,
@@ -210,6 +207,25 @@
 				CC53E9322D5A886B0080D4BD /* Task.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		CC7797162D5D19F700299F54 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				CC316CA62D57C0B30034F3C8 /* TaskListModuleInput.swift */,
+				CC316CAC2D57C0B30034F3C8 /* TaskListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		CC7797172D5D1A7900299F54 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				CC316CB02D57C0B30034F3C8 /* TaskListInteractor.swift */,
+				CC316CAE2D57C0B30034F3C8 /* TaskListInteractorInput.swift */,
+				CC316CA82D57C0B30034F3C8 /* TaskListInteractorOutput.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

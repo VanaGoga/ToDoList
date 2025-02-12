@@ -5,12 +5,12 @@
 //  Created by Савва on 07.02.2025.
 //
 
-protocol TaskListViewInput: class {
+protocol TaskListViewInput: AnyObject {
 
-    /**
-        @author Savva
-        Setup initial state of the view
-    */
-
+    /// Setup initial state of the view
     func setupInitialState()
+    
+    /// Show list of tasks
+    /// - Parameter tasks: array of taks
+    func show(tasks: [Task])
 }

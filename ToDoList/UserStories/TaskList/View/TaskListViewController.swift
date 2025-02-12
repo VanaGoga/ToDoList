@@ -29,41 +29,30 @@ class TaskListViewController: UIViewController, TaskListViewInput {
     // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        output.viewIsReady()
         view.backgroundColor = TaskListConstants.backgroundColor
         
         setupTableView()
         setupTableHeaderView()
+        
+        output.viewIsReady()
+    }
+    
+    func show(tasks: [Task]) {
+        delegate?.show(tasks: tasks)
+        
+        tableView.reloadData()
     }
     
     private func setupTableView() {
         delegate = TaskListTableViewDelegate()
-        tableView.delegate = delegate
-        tableView.dataSource = delegate
-//        TaskCell
-        tableView.register(TaskListTableViewCell.self, forCellReuseIdentifier: "TaskListTableViewCell")
-        
+        delegate?.setupInitialState(with: tableView)
+
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .black
         tableView.backgroundColor = .black
-        
-//        let margins = view.layoutMarginsGuide
-//        let guide = view.safeAreaLayoutGuide
-//          NSLayoutConstraint.activate([
-//            view.topAnchor.constraint(equalToSystemSpacingBelow: guide.topAnchor, multiplier: 1.0),
-//            guide.bottomAnchor.constraint(equalToSystemSpacingBelow: view.bottomAnchor, multiplier: 1.0)
-////           view.topAnchor.constraint(eqguide.topAnchor, multiplier: 1.0),
-////           guide.bottomAnchor.constraint(view.bottomAnchor, multiplier: 1.0)
-//           ])
-        
-//        NSLayoutConstraint.activate([
-//            view.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor)
-//
-//        ])
-//
+
         view.addSubview(tableView)
         
-//        tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
