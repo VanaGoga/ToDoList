@@ -12,6 +12,7 @@ class TaskListInteractor: TaskListInteractorInput {
 
     var service: TodoListServiceInput!
     weak var output: TaskListInteractorOutput!
+    private var tasks: [TaskEntity] = []
     
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "Model")
@@ -39,7 +40,7 @@ class TaskListInteractor: TaskListInteractorInput {
                     self.output.didLoad(tasks: result)
                     
                     self.saveTasksToCoreData(result)
-                case let .error(_): break
+                case .error(_): break
                 }
             }
         }
@@ -49,13 +50,26 @@ class TaskListInteractor: TaskListInteractorInput {
         let fetchRequest: NSFetchRequest<TaskEntity> = TaskEntity.fetchRequest()
         do {
             let taskEntities = try context.fetch(fetchRequest)
+            tasks = taskEntities
             return taskEntities.map { Task(title: $0.title ?? "", details: $0.details ?? "", date: $0.date ?? Date(), isCompleted: $0.isCompeted) }
             
         } catch { return nil }
     }
+    
+    func deleteTask(at index: Int) {
+        let taskToDelete = tasks[index]
+        context.delete(taskToDelete)
+        
+        do {
+            try context.save()
+            tasks.remove(at: index)
+        } catch {
+            print("Ошибка удаления задачи: \(error)")
+        }
+    }
 
-    private func saveTasksToCoreData(_ tasks: [Task]) {
-        tasks.forEach { todo in
+    private func saveTasksToCoreData(_ tasksArray: [Task]) {
+        tasksArray.forEach { todo in
             let taskEntity = TaskEntity(context: context)
             taskEntity.title = todo.title
             taskEntity.details = todo.details

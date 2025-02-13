@@ -36,6 +36,7 @@
 		CC77971F2D5D2B6600299F54 /* TaskAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC77971E2D5D2B6600299F54 /* TaskAPIResponse.swift */; };
 		CC7797212D5D2CB800299F54 /* ServiceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7797202D5D2CB800299F54 /* ServiceResponse.swift */; };
 		CC7797232D5D2E1300299F54 /* TodoListServiceInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7797222D5D2E1300299F54 /* TodoListServiceInput.swift */; };
+		CC7797462D5E72BF00299F54 /* TaskListState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7797452D5E72BF00299F54 /* TaskListState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		CC77971E2D5D2B6600299F54 /* TaskAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskAPIResponse.swift; sourceTree = "<group>"; };
 		CC7797202D5D2CB800299F54 /* ServiceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceResponse.swift; sourceTree = "<group>"; };
 		CC7797222D5D2E1300299F54 /* TodoListServiceInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListServiceInput.swift; sourceTree = "<group>"; };
+		CC7797452D5E72BF00299F54 /* TaskListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,8 +223,10 @@
 		CC7797162D5D19F700299F54 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				CC316CAB2D57C0B30034F3C8 /* TaskListViewOutput.swift */,
 				CC316CA62D57C0B30034F3C8 /* TaskListModuleInput.swift */,
 				CC316CAC2D57C0B30034F3C8 /* TaskListPresenter.swift */,
+				CC7797452D5E72BF00299F54 /* TaskListState.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -254,7 +258,6 @@
 			children = (
 				CC316CAF2D57C0B30034F3C8 /* TaskListRouter.swift */,
 				CC316CAA2D57C0B30034F3C8 /* TaskListRouterInput.swift */,
-				CC316CAB2D57C0B30034F3C8 /* TaskListViewOutput.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				CC316CB62D57C0B30034F3C8 /* TaskListViewOutput.swift in Sources */,
 				CC316CC22D57EA2C0034F3C8 /* TaskListHeaderView.swift in Sources */,
 				CC316C5A2D562D160034F3C8 /* ViewController.swift in Sources */,
+				CC7797462D5E72BF00299F54 /* TaskListState.swift in Sources */,
 				CC53E9332D5A886B0080D4BD /* Task.swift in Sources */,
 				CC7797212D5D2CB800299F54 /* ServiceResponse.swift in Sources */,
 				CC77971A2D5D206B00299F54 /* TodoListService.swift in Sources */,

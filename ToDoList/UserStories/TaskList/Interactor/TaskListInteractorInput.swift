@@ -12,4 +12,7 @@ protocol TaskListInteractorInput {
     /// Get list of tasks
     func getTaskList() 
     
+//    func saveTasksToCoreData(_ tasks: [Task])
+    func deleteTask(at index: Int)
+    
 }

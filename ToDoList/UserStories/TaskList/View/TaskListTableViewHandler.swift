@@ -9,9 +9,10 @@ import Foundation
 import UIKit
 
 
-protocol TaskListTableViewHandlerOutput: AnyObject {
-    
-    func showActions(for index: IndexPath)
+protocol TaskListTableViewHandlerOutput: UIContextMenuInteractionDelegate {
+
+    func didHighlightTask(at index: IndexPath)
+//    func showActions(for index: IndexPath)
     
 }
 
@@ -36,31 +37,11 @@ class TaskListTableViewHandler: NSObject, UITableViewDelegate {
     func show(tasks: [Task]) {
         self.tasks = tasks
     }
-
-
-//    // MARK: - UIScrollViewDelegate
-//    
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        
-//        print("y offset = \(scrollView.contentOffset.y)")
-//        
-//        let offsetY = max(scrollView.contentOffset.y, -60)
-//        let newHeight = max(maxHeaderHeight - offsetY, minHeaderHeight)
-//        
-//        // Изменяем высоту заголовка
-//        headerHeightConstraint?.constant = newHeight
-//        
-//        // Обновляем положение текста
-//        let titleScale = (newHeight - minHeaderHeight) / (maxHeaderHeight - minHeaderHeight)
-//        titleLabel?.font = UIFont.boldSystemFont(ofSize: 32 * titleScale)
-//        titleBottomConstraint?.constant = -20 * titleScale
-//        
-//        // Анимация изменений
-//        UIView.animate(withDuration: 0.1) {
-//            self.view?.layoutIfNeeded()
-//        }
-//    }
     
+    func deleteTask(at indexPath: IndexPath) {
+        tasks.remove(at: indexPath.row)
+        tableView?.deleteRows(at: [indexPath], with: .fade)
+    }
 
 }
 
@@ -76,12 +57,29 @@ extension TaskListTableViewHandler: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TaskListTableViewCell", for: indexPath) as? TaskListTableViewCell
         else { return UITableViewCell() }
         
+        cell.cellDelegate = output
         cell.configure(with: tasks[indexPath.row])
-        cell.onLongPress = { [weak self] in
-            self?.output?.showActions(for: indexPath)
-        }
+//        cell.onLongPress = { [weak self] in
+//            self?.output?.showActions(for: indexPath)
+//        }
         
         return cell
     }
 
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        print("@@@ Selected row = \(indexPath)")
+//    }
+//
+    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+        output?.didHighlightTask(at: indexPath)
+        // TODO
+//        print("@@@ didHighlightRowAt = \(indexPath)")
+    }
+    
+//    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+//        print("@@@ willSelectRowAt = \(indexPath)")
+//
+//        return indexPath
+//    }
+//
 }

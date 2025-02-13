@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TaskListViewController: UIViewController {
+class TaskListViewController: UIViewController, TaskListTableViewHandlerOutput {
     
     var output: TaskListViewOutput!
 
@@ -77,46 +77,38 @@ extension TaskListViewController: TaskListViewInput {
         tableView.reloadData()
     }
     
+    func deleteTask(at indexPath: IndexPath) {
+        tableViewHandler?.deleteTask(at: indexPath)
+    }
+    
 }
 
 
 // MARK: TaskListTableViewHandlerOutput
 
-extension TaskListViewController: TaskListTableViewHandlerOutput {
-    
-    func showActions(for index: IndexPath) {
-        let alertController = UIAlertController(title: "Действия", message: "Выберите действие для задачи task", preferredStyle: .actionSheet)
+    extension TaskListViewController: UIContextMenuInteractionDelegate {
         
-        alertController.addAction(UIAlertAction(title: "Редактировать", style: .default, handler: { _ in
-            self.editTask(at: index)
-        }))
+        func didHighlightTask(at index: IndexPath) {
+            output.didHighlightTask(at: index.row)
+        }
         
-        alertController.addAction(UIAlertAction(title: "Поделиться", style: .default, handler: { _ in
-//            self.shareTask(task)
-        }))
-        
-        alertController.addAction(UIAlertAction(title: "Удалить", style: .destructive, handler: { _ in
-            self.deleteTask(at: index)
-        }))
-        
-        alertController.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
-        
-        present(alertController, animated: true, completion: nil)
+//        func showActions(for index: IndexPath) {
+//            print("!!! Index = \(index)")
+//        }
+
+        func contextMenuInteraction(_ interaction: UIContextMenuInteraction, configurationForMenuAtLocation location: CGPoint) -> UIContextMenuConfiguration? {
+            return UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { _ in
+                let editAction = UIAction(title: "Редактировать", image: UIImage(systemName: "pencil")) { _ in
+                }
+                
+                let shareAction = UIAction(title: "Поделиться", image: UIImage(systemName: "square.and.arrow.up")) { _ in
+                }
+                
+                let deleteAction = UIAction(title: "Удалить", image: UIImage(systemName: "trash"), attributes: .destructive) { [weak self] _ in
+                    self?.output.didPressDeleteAction() // TODO
+                }
+                
+                return UIMenu(title: "", children: [editAction, shareAction, deleteAction])
+            }
+        }
     }
-    
-    private func editTask(at indexPath: IndexPath) {
-//           print("Редактирование задачи: \(tasks[indexPath.row])")
-    }
-    
-    private func shareTask(_ task: String) {
-        print("Поделиться задачей: \(task)")
-    }
-    
-    private func deleteTask(at indexPath: IndexPath) {
-//           tasks.remove(at: indexPath.row)
-//           tableView.deleteRows(at: [indexPath], with: .fade)
-        print("Удалено!")
-    }
-    
-    
-}

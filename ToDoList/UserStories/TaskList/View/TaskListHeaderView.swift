@@ -46,7 +46,6 @@ class TaskListHeaderView: UIView {
         
         addSubview(searchContainer)
         
-        // Иконка лупы
         searchIcon = UIImageView(image: UIImage(systemName: "magnifyingglass"))
         searchIcon.tintColor = .lightGray
         searchIcon.translatesAutoresizingMaskIntoConstraints = false

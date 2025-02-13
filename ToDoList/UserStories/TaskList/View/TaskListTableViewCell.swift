@@ -9,6 +9,7 @@ import UIKit
 
 class TaskListTableViewCell: UITableViewCell {
     
+    weak var cellDelegate: UIContextMenuInteractionDelegate?
     var onLongPress: (() -> Void)?
     
     private let statusImageView: UIImageView = {
@@ -80,14 +81,15 @@ class TaskListTableViewCell: UITableViewCell {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
+        setupContextMenuInteraction()
     }
     
     func configure(with task: Task) {
+        setupContextMenuInteraction()
         statusImageView.image = UIImage(named: task.isCompleted ? "taskDone" : "taskNotDone")
         titleLabel.text = task.title
         descriptionLabel.text = task.details
-
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .short
         dateFormatter.timeStyle = .none
@@ -95,12 +97,22 @@ class TaskListTableViewCell: UITableViewCell {
         dateLabel.text = dateFormatter.string(from: task.date)
     }
     
-    private func setupLongPressGesture() {
-            let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
-            self.addGestureRecognizer(longPressGesture)
+    private func setupContextMenuInteraction() {
+        guard let cellDelegate = cellDelegate else {
+            return
         }
         
-        @objc private func handleLongPress() {
-            onLongPress?()
-        }
+        let contextMenuInteraction = UIContextMenuInteraction(delegate: cellDelegate)
+        self.addInteraction(contextMenuInteraction)
+    }
+    
+    private func setupLongPressGesture() {
+        let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
+        self.addGestureRecognizer(longPressGesture)
+    }
+        
+    @objc private func handleLongPress() {
+        onLongPress?()
+    }
+
 }
