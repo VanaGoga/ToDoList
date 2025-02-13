@@ -86,12 +86,16 @@ class TaskListInteractor: TaskListInteractorInput {
     }
 
     private func saveTasksToCoreData(_ tasksArray: [Task]) {
+        tasks = []
+        
         tasksArray.forEach { todo in
             let taskEntity = TaskEntity(context: context)
             taskEntity.title = todo.title
             taskEntity.details = todo.details
             taskEntity.date = todo.date
             taskEntity.isCompeted = todo.isCompleted
+            
+            tasks.append(taskEntity)
         }
         
         do {

@@ -28,7 +28,7 @@ class TodoListService: TodoListServiceInput {
                 let apiResponse = try JSONDecoder().decode(TaskAPIResponse.self, from: data)
                 
                 let currentDate = Date()
-                let tasks = apiResponse.todos.map { Task(title: $0.title, details: "", date: currentDate, isCompleted: $0.completed) }
+                let tasks = apiResponse.todos.map { Task(title: $0.title, details: "Details", date: currentDate, isCompleted: $0.completed) }
                 completion(.success(result: tasks))
             } catch {
                 completion(.error(error: error))

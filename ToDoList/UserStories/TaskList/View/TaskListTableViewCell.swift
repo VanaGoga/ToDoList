@@ -101,7 +101,24 @@ class TaskListTableViewCell: UITableViewCell {
     func configure(with task: Task) {
         setupContextMenuInteraction()
         statusImageView.image = UIImage(named: task.isCompleted ? "taskDone" : "taskNotDone")
-        titleLabel.text = task.title
+        
+        if task.isCompleted {
+            titleLabel.textColor = UIColor.gray
+            let attributeString = NSMutableAttributedString(string: task.title)
+            attributeString.addAttribute(.strikethroughStyle, value: NSUnderlineStyle.single.rawValue, range: NSRange(location: 0, length: task.title.count))
+            titleLabel.attributedText = attributeString
+            
+            descriptionLabel.text = task.details
+            descriptionLabel.textColor = .gray
+            
+        } else {
+            titleLabel.textColor = UIColor.white
+            titleLabel.text = task.title
+            
+            descriptionLabel.text = task.details
+            descriptionLabel.textColor = .white
+        }
+        
         descriptionLabel.text = task.details
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .short
