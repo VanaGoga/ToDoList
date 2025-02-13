@@ -12,6 +12,13 @@ class TaskListTableViewCell: UITableViewCell {
     weak var cellDelegate: UIContextMenuInteractionDelegate?
     var onLongPress: (() -> Void)?
     
+    private let separatorView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .gray
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     private let statusImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
@@ -56,6 +63,7 @@ class TaskListTableViewCell: UITableViewCell {
         addSubview(titleLabel)
         addSubview(descriptionLabel)
         addSubview(dateLabel)
+        addSubview(separatorView)
         
         NSLayoutConstraint.activate([
             statusImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
@@ -76,7 +84,12 @@ class TaskListTableViewCell: UITableViewCell {
             dateLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             dateLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
     
-            dateLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12)
+            dateLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12),
+            
+            separatorView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            separatorView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            separatorView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            separatorView.heightAnchor.constraint(equalToConstant: 0.5)
         ])
     }
     
