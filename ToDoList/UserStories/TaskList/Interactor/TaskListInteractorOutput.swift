@@ -12,8 +12,5 @@ protocol TaskListInteractorOutput: AnyObject {
     /// This method calls when tasks was successfully loaded
     /// - Parameter tasks: task list
     func didLoad(tasks:[Task])
-    
-    // TODO
-    // func loadingDidFail
-    
+
 }

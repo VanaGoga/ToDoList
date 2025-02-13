@@ -12,7 +12,6 @@ import UIKit
 protocol TaskListTableViewHandlerOutput: UIContextMenuInteractionDelegate {
 
     func didHighlightTask(at index: IndexPath)
-//    func showActions(for index: IndexPath)
     
 }
 
@@ -59,27 +58,12 @@ extension TaskListTableViewHandler: UITableViewDataSource {
         
         cell.cellDelegate = output
         cell.configure(with: tasks[indexPath.row])
-//        cell.onLongPress = { [weak self] in
-//            self?.output?.showActions(for: indexPath)
-//        }
-        
+
         return cell
     }
 
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        print("@@@ Selected row = \(indexPath)")
-//    }
-//
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
         output?.didHighlightTask(at: indexPath)
-        // TODO
-//        print("@@@ didHighlightRowAt = \(indexPath)")
     }
-    
-//    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-//        print("@@@ willSelectRowAt = \(indexPath)")
-//
-//        return indexPath
-//    }
-//
+
 }

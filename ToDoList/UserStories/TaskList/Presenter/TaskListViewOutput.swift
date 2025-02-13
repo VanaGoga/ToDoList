@@ -14,7 +14,7 @@ protocol TaskListViewOutput {
     
     func didPressDeleteAction()
     
-    func didPressEditTask(at index: Int)
+    func didPressEditAction()
     
-    func didPressShareTask(at index: Int)
+    func didPressShareAction()
 }

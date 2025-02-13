@@ -36,11 +36,11 @@ extension TaskListPresenter: TaskListViewOutput {
         state.hightlightedTaskIndex = nil
     }
     
-    func didPressEditTask(at index: Int) {
+    func didPressEditAction() {
         
     }
     
-    func didPressShareTask(at index: Int) {
+    func didPressShareAction() {
         
     }
     

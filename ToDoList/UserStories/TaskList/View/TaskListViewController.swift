@@ -91,10 +91,6 @@ extension TaskListViewController: TaskListViewInput {
         func didHighlightTask(at index: IndexPath) {
             output.didHighlightTask(at: index.row)
         }
-        
-//        func showActions(for index: IndexPath) {
-//            print("!!! Index = \(index)")
-//        }
 
         func contextMenuInteraction(_ interaction: UIContextMenuInteraction, configurationForMenuAtLocation location: CGPoint) -> UIContextMenuConfiguration? {
             return UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { _ in
@@ -105,7 +101,7 @@ extension TaskListViewController: TaskListViewInput {
                 }
                 
                 let deleteAction = UIAction(title: "Удалить", image: UIImage(systemName: "trash"), attributes: .destructive) { [weak self] _ in
-                    self?.output.didPressDeleteAction() // TODO
+                    self?.output.didPressDeleteAction()
                 }
                 
                 return UIMenu(title: "", children: [editAction, shareAction, deleteAction])
