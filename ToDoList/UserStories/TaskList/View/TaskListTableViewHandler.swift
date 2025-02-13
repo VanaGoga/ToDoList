@@ -12,6 +12,7 @@ import UIKit
 protocol TaskListTableViewHandlerOutput: UIContextMenuInteractionDelegate {
 
     func didHighlightTask(at index: IndexPath)
+    func didSelectTask(at index: IndexPath)
     
 }
 
@@ -41,6 +42,11 @@ class TaskListTableViewHandler: NSObject, UITableViewDelegate {
         tasks.remove(at: indexPath.row)
         tableView?.deleteRows(at: [indexPath], with: .fade)
     }
+    
+    func changeTask(at indexPath: IndexPath, task: Task) {
+        tasks[indexPath.row] = task
+        tableView?.reloadRows(at: [indexPath], with: .fade)
+    }
 
 }
 
@@ -64,6 +70,10 @@ extension TaskListTableViewHandler: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
         output?.didHighlightTask(at: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        output?.didSelectTask(at: indexPath)
     }
 
 }

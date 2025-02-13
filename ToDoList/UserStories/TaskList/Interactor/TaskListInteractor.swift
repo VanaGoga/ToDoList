@@ -67,6 +67,23 @@ class TaskListInteractor: TaskListInteractorInput {
             print("Ошибка удаления задачи: \(error)")
         }
     }
+    
+    func changeTask(at index: Int, task: Task) {
+        let taskToUpdate = tasks[index]
+            
+            // Обновляем задачу в Core Data
+        taskToUpdate.title = task.title
+        taskToUpdate.details = task.details
+        taskToUpdate.date = task.date
+        taskToUpdate.isCompeted = task.isCompleted
+            
+        do {
+            try context.save()
+        } catch {
+            print("Ошибка при обновлении задачи: \(error)")
+        }
+        
+    }
 
     private func saveTasksToCoreData(_ tasksArray: [Task]) {
         tasksArray.forEach { todo in

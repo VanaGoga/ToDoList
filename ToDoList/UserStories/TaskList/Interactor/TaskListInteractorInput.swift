@@ -14,4 +14,6 @@ protocol TaskListInteractorInput {
     
     func deleteTask(at index: Int)
     
+    func changeTask(at index: Int, task: Task)
+    
 }

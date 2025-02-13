@@ -11,6 +11,7 @@ protocol TaskListViewOutput {
     func viewIsReady()
     
     func didHighlightTask(at index: Int)
+    func didSelectTask(at index: Int)
     
     func didPressDeleteAction()
     

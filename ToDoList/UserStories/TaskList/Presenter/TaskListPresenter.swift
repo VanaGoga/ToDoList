@@ -28,6 +28,18 @@ extension TaskListPresenter: TaskListViewOutput {
         state.hightlightedTaskIndex = index
     }
     
+    func didSelectTask(at index: Int) {
+        let selectedTask = state.tasks[index]
+        state.tasks[index] = Task(
+            title: selectedTask.title,
+            details: selectedTask.details,
+            date: selectedTask.date,
+            isCompleted: !selectedTask.isCompleted
+        )
+        view.changeTask(at: IndexPath(row: index, section: 0), task: state.tasks[index])
+        interactor.changeTask(at: index, task: state.tasks[index])
+    }
+    
     func didPressDeleteAction() {
         guard let index = state.hightlightedTaskIndex else { return }
         state.tasks.remove(at: index)

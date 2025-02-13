@@ -17,4 +17,6 @@ protocol TaskListViewInput: AnyObject {
     func show(tasks: [Task])
     
     func deleteTask(at indexPath: IndexPath)
+    
+    func changeTask(at indexPath: IndexPath, task: Task)
 }

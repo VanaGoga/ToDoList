@@ -7,8 +7,8 @@
 
 import UIKit
 
-class TaskListViewController: UIViewController, TaskListTableViewHandlerOutput {
-    
+class TaskListViewController: UIViewController {
+
     var output: TaskListViewOutput!
 
     private let tableView = UITableView()
@@ -64,9 +64,26 @@ class TaskListViewController: UIViewController, TaskListTableViewHandlerOutput {
 
 }
 
+// MARK: TaskListTableViewHandlerOutput
+
+extension TaskListViewController: TaskListTableViewHandlerOutput {
+ 
+    func didHighlightTask(at index: IndexPath) {
+        output.didHighlightTask(at: index.row)
+    }
+    
+    func didSelectTask(at index: IndexPath) {
+        output.didSelectTask(at: index.row)
+        // TODO
+    }
+    
+}
+
 // MARK: TaskListViewInput
 
 extension TaskListViewController: TaskListViewInput {
+
+    
     
     func setupInitialState() {
     }
@@ -81,16 +98,16 @@ extension TaskListViewController: TaskListViewInput {
         tableViewHandler?.deleteTask(at: indexPath)
     }
     
+    func changeTask(at indexPath: IndexPath, task: Task) {
+        tableViewHandler?.changeTask(at: indexPath, task: task)
+    }
+    
 }
 
 
 // MARK: TaskListTableViewHandlerOutput
 
     extension TaskListViewController: UIContextMenuInteractionDelegate {
-        
-        func didHighlightTask(at index: IndexPath) {
-            output.didHighlightTask(at: index.row)
-        }
 
         func contextMenuInteraction(_ interaction: UIContextMenuInteraction, configurationForMenuAtLocation location: CGPoint) -> UIContextMenuConfiguration? {
             return UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { _ in
